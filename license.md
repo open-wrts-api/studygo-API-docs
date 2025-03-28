@@ -24,3 +24,12 @@ Als je een POST-verzoek stuurt naar ```https://api.wrts.nl/api/v3/qna/questions`
 ```
 
 Maak je een post op het forum. Hierbij is ```subject_id``` gelijk aan de ID van het vak dat je wilt oefenen (zie vakken.js) en ```contents``` de vraag.
+## zoeken (erg lang)
+werkt net als home maar dan met zoeken (geen auth)
+``` https://api.wrts.nl/api/v3/public/qna/questions?search_terms=test&status=unanswered&grade_number=1&school_track_id=12&school_track_name=vmbo-t&subject_id=3 ```
+search_terms = wat je wilt zoeken 
+status = unanswered / correct_answer (beantwoord door tutor) / answered (optioneel)
+grade_number = welke klas de vraag steller in zit (optioneel)
+school_track_id = idk iets met wat voor school de vraag steller in zit (optioneel)
+school_track_name = naam van wat voor school de vraag steller in zit (lijkt niks te doen) (optioneel)
+subject_id = gelijk aan de ID van het vak dat je wilt oefenen (zie vakken.js)
