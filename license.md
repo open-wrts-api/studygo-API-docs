@@ -1,17 +1,35 @@
-# note: dit is geen license zie echtelicense
------
-# SG forum api docs
-## qna_questions  
+# Note: Dit is geen licentie, zie echtelicentie voor de echte licentie
+---
+
+# SG Forum API Docs
+
+## **qna/questions**  
 Geeft de homepagina van het forum (geen authenticatie nodig).  
-URL: ```https://api.wrts.nl/api/v3/public/qna/questions```  
+**URL:**  
+```plaintext
+https://api.wrts.nl/api/v3/public/qna/questions
+```
 
-## qna_questions_id  
+---
+
+## **qna/questions/id**  
 Geeft de inhoud en antwoorden van een post op het forum (geen authenticatie nodig).  
-URL: ```https://api.wrts.nl/api/v3/public/qna/questions/jouw_prachtige_forum_post_id```  
-Vervang hierbij ```jouw_prachtige_forum_post_id``` met jouw post-ID, bijvoorbeeld: ```520564```  
+**URL:**  
+```plaintext
+https://api.wrts.nl/api/v3/public/qna/questions/jouw_prachtige_forum_post_id
+```
 
-## qna_questions (POST)  
-Als je een POST-verzoek stuurt naar ```https://api.wrts.nl/api/v3/qna/questions``` met een token en een body die er zo uitziet:  
+Vervang hierbij `jouw_prachtige_forum_post_id` met jouw post-ID, bijvoorbeeld: `520564`.
+
+---
+
+## **qna/questions (POST)**  
+Maak een post op het forum door een POST-verzoek te sturen naar:  
+```plaintext
+https://api.wrts.nl/api/v3/qna/questions
+```
+
+Hiervoor is een token nodig en een body die er zo uitziet:  
 
 ```json
 {
@@ -23,22 +41,54 @@ Als je een POST-verzoek stuurt naar ```https://api.wrts.nl/api/v3/qna/questions`
 }
 ```
 
-Maak je een post op het forum. Hierbij is ```subject_id``` gelijk aan de ID van het vak dat je wilt oefenen (zie vakken.js) en ```contents``` de vraag.
-## Zoeken (erg lang)
+### Uitleg:
+- **contents**: De vraag die je wilt stellen.
+- **qna_attachments_attributes**: heel eerlijk idk.
+- **subject_id**: ID van het vak dat je wilt oefenen (zie `vakken.js`).
 
-Werkt net als "home", maar dan met zoeken (geen authenticatie nodig).
+---
 
+## **Zoeken (erg lang)**  
+Werkt net als "home", maar dan met zoeken (geen authenticatie nodig).  
+
+**URL:**  
 ```plaintext
 https://api.wrts.nl/api/v3/public/qna/questions?search_terms=test&status=unanswered&grade_number=1&school_track_id=12&school_track_name=vmbo-t&subject_id=3
 ```
 
 ### Parameters:
 - **search_terms**: Wat je wilt zoeken.
-- **status** (optioneel): 
-  - `unanswered`: Onbeantwoorde vragen.
-  - `correct_answer`: Vragen beantwoord door een tutor.
-  - `answered`: beantwoorde vragen.
-- **grade_number**: De klas waarin de vraagsteller zit (optioneel).
-- **school_track_id**: Iets met het type school van de vraagsteller (optioneel).
-- **school_track_name**: Naam van het type school van de vraagsteller (lijkt niets te doen) (optioneel).
-- **subject_id**: ID van het vak dat je wilt oefenen (zie `vakken.js`) (optioneel).
+- **status** (optioneel):  
+  - `unanswered`: Onbeantwoorde vragen.  
+  - `correct_answer`: Vragen beantwoord door een tutor.  
+  - `answered`: Beantwoorde vragen.  
+- **grade_number**: De klas waarin de vraagsteller zit (optioneel).  
+- **school_track_id**: Iets met het type school van de vraagsteller (optioneel).  
+- **school_track_name**: Naam van het type school van de vraagsteller (lijkt niets te doen) (optioneel).  
+- **subject_id**: ID van het vak dat je wilt oefenen (zie `vakken.js`) (optioneel).  
+
+---
+
+## **qna/questions/answers**  
+Beantwoord een forumpost door een POST-verzoek te sturen naar:  
+
+**URL:**  
+```plaintext
+https://api.wrts.nl/api/v3/qna/questions/forum_post_id/answers
+```
+
+Vervang hierbij `forum_post_id` met de ID van de forumpost, bijvoorbeeld: `520564`.
+
+### Body:
+```json
+{
+  "qna_answer": {
+    "body": "mijn geweldige antwoord",
+    "qna_attachments_attributes": []
+  }
+}
+```
+
+### Uitleg:
+- **body**: De tekst van jouw antwoord.
+- **qna_attachments_attributes**: heel eerlijk idk.
