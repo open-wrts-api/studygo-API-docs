@@ -1,4 +1,4 @@
-# Note: Dit is geen licentie, zie echtelicentie voor de echte licentie
+# Note: Dit is geen licentie, zie echtelicense voor de echte licentie
 ---
 
 # SG Forum API Docs
