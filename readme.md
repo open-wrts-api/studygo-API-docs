@@ -1,5 +1,5 @@
 # studygo onofficel API docs
-
+voor forum zie het license tabblad in github
 ## get_token
 met get_token kan je een x-auth-token genareren door een post verzoek te doen naar https://api.wrts.nl/api/v3/auth/get_token met een email en wachtwoord
 bijvoorbeeld:
