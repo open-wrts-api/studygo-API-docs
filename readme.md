@@ -4,7 +4,7 @@ voor forum zie het license tabblad in github
 met get_token kan je een x-auth-token genareren door een post verzoek te doen naar https://api.wrts.nl/api/v3/auth/get_token met een email en wachtwoord
 bijvoorbeeld:
 
-    https://api.wrts.nl/api/v3/auth/get_token?email=jouw_email&password=jouw_wachtwoord
+curl 'https://api.wrts.nl/api/v3/auth/get_token' --compressed -X POST -H 'Accept: application/json, text/plain, */*' -H 'Content-Type: application/json' -H 'X-Client-Type: web' --data-raw '{"email":"email","password":"wachtwoord"}'
 
 de uitkomst is bijv deze JSON
 
