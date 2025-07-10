@@ -1,3 +1,8 @@
+
+# Update
+SG heeft captcha's toegevoegt aan een paar endpoints en ik ga niet verder met het onderhouden van deze docs
+
+
 # studygo onofficel API docs
 voor forum zie het license tabblad in github
 ## get_token
